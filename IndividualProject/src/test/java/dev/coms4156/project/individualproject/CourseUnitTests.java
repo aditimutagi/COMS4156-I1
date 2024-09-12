@@ -1,6 +1,8 @@
 package dev.coms4156.project.individualproject;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,30 +27,30 @@ public class CourseUnitTests {
   public void enrollStudentTest() {
     testCourse.setEnrolledStudentCount(249);
     boolean result = testCourse.enrollStudent();
-    assertEquals(true, result, "Student should be enrolled successfully.");
-    assertEquals(true, testCourse.isCourseFull(), "Enrollment should be full.");
+    assertTrue(result, "Student should be enrolled successfully.");
+    assertTrue(testCourse.isCourseFull(), "Enrollment should be full.");
   }
 
   @Test
   public void enrollStudentWhenFullTest() {
     testCourse.setEnrolledStudentCount(250); // Set enrolled count to capacity
     boolean result = testCourse.enrollStudent();
-    assertEquals(false, result, "Enrollment should fail when the course is full.");
+    assertFalse(result, "Enrollment should fail when the course is full.");
   }
 
   @Test
   public void dropStudentTest() {
     testCourse.setEnrolledStudentCount(250); // Set enrolled count to capacity
     boolean result = testCourse.dropStudent();
-    assertEquals(true, result, "Student should be dropped successfully.");
-    assertEquals(false, testCourse.isCourseFull(), "Enrollment should no longer be full.");
+    assertTrue(result, "Student should be dropped successfully.");
+    assertFalse(testCourse.isCourseFull(), "Enrollment should no longer be full.");
   }
 
   @Test
   public void dropStudentWhenNoneEnrolledTest() {
     testCourse.setEnrolledStudentCount(0); // Set enrolled count to 0
     boolean result = testCourse.dropStudent();
-    assertEquals(false, result, "Dropping a student should fail when no students are enrolled.");
+    assertFalse(result, "Dropping a student should fail when no students are enrolled.");
   }
 
   @Test
