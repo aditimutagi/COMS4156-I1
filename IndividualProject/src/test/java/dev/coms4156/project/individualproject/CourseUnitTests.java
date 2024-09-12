@@ -11,8 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 
 /**
  * Unit tests for the Course class.
- * This class contains test methods to verify the behavior of the Course class, including
- * testing the toString() method.
+ * This class contains test methods to verify the behavior of the Course class
  */
 @SpringBootTest
 @ContextConfiguration

@@ -19,3 +19,20 @@ Course.java:
                       getInstructorName() returned course location
             modified: swapped the return statements
 
+Department.java:
+    getNumberOfMajors(): returned incorrect value
+        original: return -this.numberOfMajors
+        modified: return this.numberOfMajors
+    getDepartmentChair(): returned incorrect value
+        original: returned string "this.departmentChair"
+        modified: return this.departmentChair
+    dropPersonFromMajor(): didn't check if number of majors is greater than zero
+        original: numberOfMajors--;
+        modified: if numberOfMajors is greater than 0, then decrement value.
+    getDeptCode(): placed before Department object constructor
+        modified: moved it below so it can retrieve department code value
+    toString(): returned incorrect value
+        original: returned string "result.toString()"
+        modified: return result.toString()
+
+IndividualProjectApplication.java:
