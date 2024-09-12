@@ -18,6 +18,9 @@ import org.springframework.test.context.ContextConfiguration;
 @ContextConfiguration
 public class DepartmentUnitTests {
 
+  /**
+   * Initializes Department before each test.
+   */
   @BeforeEach
   public void setupCourseForTesting() {
     testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 250);
@@ -76,8 +79,8 @@ public class DepartmentUnitTests {
 
   @Test
   public void toStringTest() {
-    String expectedResult = "CS COMS4156: \nInstructor: Griffin Newbold; Location: 417 IAB; Time:" +
-        " 11:40-12:55\n";
+    String expectedResult = "CS COMS4156: \nInstructor: Griffin Newbold; Location: 417 IAB; Time:"
+        + " 11:40-12:55\n";
     assertEquals(expectedResult, testDepartment.toString());
   }
 

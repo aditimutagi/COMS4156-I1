@@ -55,7 +55,8 @@ public class CourseUnitTests {
   @Test
   public void reassignInstructorTest() {
     testCourse.reassignInstructor("Aditi Mutagi");
-    assertEquals("Aditi Mutagi", testCourse.getInstructorName(), "Instructor should be reassigned.");
+    assertEquals("Aditi Mutagi", testCourse.getInstructorName(),
+        "Instructor should be reassigned.");
   }
 
   @Test
