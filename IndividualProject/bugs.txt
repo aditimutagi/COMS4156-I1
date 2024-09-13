@@ -42,7 +42,7 @@ Department.java:
 
     Running PMD:
         --> LooseCoupling: Avoid using implementation types like 'HashMap'
-            modified: changed all HashMap to Map
+            modified: modified HashMap to Map
         --> MissingOverride: method 'toString()' is missing an @Override annotation.
             modified: added @Override before method
 
@@ -54,4 +54,5 @@ IndividualProjectApplication.java:
             original: arg.equals("setup")
             modified: "setup".equals(arg)
         --> LooseCoupling: Avoid using implementation types like 'HashMap'
-            modified: changed all HashMap to Map
+            modified: modified HashMap to Map
+                      cast Map to HashMap

@@ -2,6 +2,7 @@ package dev.coms4156.project.individualproject;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -112,7 +113,7 @@ public class Department implements Serializable {
   @Override
   public String toString() {
     StringBuilder result = new StringBuilder();
-    for (Map.Entry<String, Course> entry : courses.entrySet()) {
+    for (HashMap.Entry<String, Course> entry : courses.entrySet()) {
       String key = entry.getKey();
       Course value = entry.getValue();
       result.append(deptCode).append(" ").append(key).append(": ").append(value.toString())
