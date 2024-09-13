@@ -55,3 +55,10 @@ IndividualProjectApplication.java:
             modified: "setup".equals(arg)
         --> LooseCoupling: Avoid using implementation types like 'HashMap'
             modified: changed all HashMap to Map
+
+MyFileDatabase.java:
+    Constructor: this.departmentMapping not initialized if flag isn't 0,
+                 doesn't verify that deSerializeObjectFromFile doesn't return null
+        modified: this.departmentMapping = null if flag isn't 0
+                  if deSerializeObjectFromFile returns null, this.departmentMapping = null
+

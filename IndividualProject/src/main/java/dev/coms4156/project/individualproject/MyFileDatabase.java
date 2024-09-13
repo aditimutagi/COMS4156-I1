@@ -23,8 +23,12 @@ public class MyFileDatabase {
    */
   public MyFileDatabase(int flag, String filePath) {
     this.filePath = filePath;
+    this.departmentMapping = new HashMap<>();
     if (flag == 0) {
-      this.departmentMapping = deSerializeObjectFromFile();
+      HashMap<String, Department> loadedMapping = deSerializeObjectFromFile();
+      if (loadedMapping != null) {
+        this.departmentMapping = loadedMapping;
+      }
     }
   }
 
