@@ -9,7 +9,7 @@ Course.java:
                   return false;
         modified: check if course is full before incrementing student count.
                   If full, then return false. Otherwise, increment and return true
-    enrollStudent(): returned false, didn't check if course was empty
+    dropStudent(): returned false, didn't check if course was empty
             original: enrolledStudentCount--;
                       return false;
             modified: check if course is empty before decreasing student count.
@@ -18,6 +18,11 @@ Course.java:
             original: getCourseLocation() returned instructor name,
                       getInstructorName() returned course location
             modified: swapped the return statements
+
+    Running PMD:
+        --> MissingOverride: method 'toString()' is missing an @Override annotation.
+            modified: added @Override before method
+
 
 Department.java:
     getNumberOfMajors(): returned incorrect value
@@ -35,4 +40,18 @@ Department.java:
         original: returned string "result.toString()"
         modified: return result.toString()
 
+    Running PMD:
+        --> LooseCoupling: Avoid using implementation types like 'HashMap'
+            modified: changed all HashMap to Map
+        --> MissingOverride: method 'toString()' is missing an @Override annotation.
+            modified: added @Override before method
+
 IndividualProjectApplication.java:
+    No bugs found manually
+
+    Running PMD:
+        --> LiteralsFirstInComparisons: Position literals first in String comparisons
+            original: arg.equals("setup")
+            modified: "setup".equals(arg)
+        --> LooseCoupling: Avoid using implementation types like 'HashMap'
+            modified: changed all HashMap to Map

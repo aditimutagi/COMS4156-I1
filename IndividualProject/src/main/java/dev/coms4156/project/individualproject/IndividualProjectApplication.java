@@ -1,7 +1,7 @@
 package dev.coms4156.project.individualproject;
 
 import jakarta.annotation.PreDestroy;
-import java.util.HashMap;
+import java.util.Map;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -36,7 +36,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
    */
   public void run(String[] args) {
     for (String arg : args) {
-      if (arg.equals("setup")) {
+      if ("setup".equals(arg)) {
         myFileDatabase = new MyFileDatabase(1, "./data.txt");
         resetDataFile();
         System.out.println("System Setup");
@@ -81,7 +81,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     coms3827.setEnrolledStudentCount(283);
     Course coms4156 = new Course("Gail Kaiser", "501 NWC", times[2], 120);
     coms4156.setEnrolledStudentCount(109);
-    HashMap<String, Course> courses = new HashMap<>();
+    Map<String, Course> courses = new Map<>();
     courses.put("1004", coms1004);
     courses.put("3134", coms3134);
     courses.put("3157", coms3157);
@@ -91,7 +91,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     courses.put("3827", coms3827);
     courses.put("4156", coms4156);
     Department compSci = new Department("COMS", courses, "Luca Carloni", 2700);
-    HashMap<String, Department> mapping = new HashMap<>();
+    Map<String, Department> mapping = new Map<>();
     mapping.put("COMS", compSci);
 
     //data for econ dept
@@ -112,7 +112,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     Course econ4840 = new Course("Mark Dean", "142 URIS", times[3], 108);
     econ4840.setEnrolledStudentCount(67);
 
-    courses = new HashMap<>();
+    courses = new Map<>();
     courses.put("1105", econ1105);
     courses.put("2257", econ2257);
     courses.put("3211", econ3211);
@@ -143,7 +143,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     Course ieor4540 = new Course("Krzysztof M Choromanski", "633 MUDD", "7:10-9:40", 60);
     ieor4540.setEnrolledStudentCount(33);
 
-    courses = new HashMap<>();
+    courses = new Map<>();
     courses.put("2500", ieor2500);
     courses.put("3404", ieor3404);
     courses.put("3658", ieor3658);
@@ -174,7 +174,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     Course chem4102 = new Course("Dalibor Sames", "320 HAV", times[2], 28);
     chem4102.setEnrolledStudentCount(27);
 
-    courses = new HashMap<>();
+    courses = new Map<>();
     courses.put("1403", chem1403);
     courses.put("1500", chem1500);
     courses.put("2045", chem2045);
@@ -205,7 +205,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     Course phys4040 = new Course("James C Hill", "214 PUP", times[1], 50);
     phys4040.setEnrolledStudentCount(31);
 
-    courses = new HashMap<>();
+    courses = new Map<>();
     courses.put("2802", phys2802);
     courses.put("3008", phys3008);
     courses.put("4003", phys4003);
@@ -236,7 +236,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     Course elen4830 = new Course("Christine P Hendon", "633 MUDD", "10:10-12:40", 60);
     elen4830.setEnrolledStudentCount(22);
 
-    courses = new HashMap<>();
+    courses = new Map<>();
     courses.put("1201", elen1201);
     courses.put("3082", elen3082);
     courses.put("3331", elen3331);
@@ -267,7 +267,7 @@ public class IndividualProjectApplication implements CommandLineRunner {
     Course psyc4493 = new Course("Jennifer Blaze", "200 SCH", "2:10-4:00", 15);
     psyc4493.setEnrolledStudentCount(9);
 
-    courses = new HashMap<>();
+    courses = new Map<>();
     courses.put("1001", psyc1001);
     courses.put("1610", psyc1610);
     courses.put("2235", psyc2235);

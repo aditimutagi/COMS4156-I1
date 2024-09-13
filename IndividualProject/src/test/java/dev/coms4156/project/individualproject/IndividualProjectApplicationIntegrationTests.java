@@ -6,8 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,7 +36,5 @@ public class IndividualProjectApplicationIntegrationTests {
     assertTrue(database.getDepartmentMapping().containsKey("ECON"),
         "ECON department should be present.");
   }
-
-  public static String testFilePath;
 
 }
