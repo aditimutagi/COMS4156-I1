@@ -1,0 +1,2 @@
+Static Code Analyzer installation and run commands: https://pmd.github.io/
+Basics on how to use Mockito MVC: https://spring.io/guides/gs/testing-web
