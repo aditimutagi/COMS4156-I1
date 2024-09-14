@@ -56,3 +56,42 @@ IndividualProjectApplication.java:
         --> LooseCoupling: Avoid using implementation types like 'HashMap'
             modified: modified HashMap to Map
                       cast Map to HashMap
+
+MyFileDatabase.java:
+    Constructor: this.departmentMapping would be uninitialized if flag not 0
+                 doesn't check if deSerializeObjectFromFile returns null
+        modified: initialized this.departmentMapping to new HashMap<>();
+                  checked that deSerializeObjectFromFile didn't return null
+    deSerializeObjectFromFile(): else returns null not a Map
+        modified: return emtpy Map
+
+
+    Running PMD:
+        --> LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+
+RouteController.java:
+    retrieveDepartment(): incorrect HTTP status
+        modified: swapped HttpStatus.NOT_FOUND and HttpStatus.OK
+    retrieveCourse(): incorrect HTTP status
+        original: returned HttpStatus.FORBIDDEN
+        modified: return HttpStatus.OK
+    getMajorCtFromDept(): incorrect HTTP status
+        original: returned HttpStatus.FORBIDDEN
+        modified: return HttpStatus.NOT_FOUND
+    findCourseTime(): incorrect return
+        original: "The course meets at: " + "some time "
+        modified: "The course meets at: " + requestedCourse.getCourseTimeSlot()
+
+    Running PMD:
+        --> LooseCoupling: Avoid using implementation types like 'HashMap'
+            modified: departmentMapping and coursesMapping to Map
+        --> UnnecessaryImport: unused import 'java.util.HashMap'
+            modified: replaced with 'java.util.Map'
+        --> UnnecessaryAnnotationValueElement: avoid use of value in annotations when its the only element
+            original: @RequestParam(value = "deptCode")
+            modified: @RequestParam("deptCode")
+        --> UseLocaleWithCaseConversions: When doing a String.toLowerCase()/toUpperCase() call, use Locale
+            original: deptCode.toUpperCase()
+                      departmentMapping.get(deptCode.toUpperCase())
+            modified: deptCode.toUpperCase(Locale.ENGLISH)
+                      departmentMapping.get(deptCode.toUpperCase(Locale.ENGLISH))

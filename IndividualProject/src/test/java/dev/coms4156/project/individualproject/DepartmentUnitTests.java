@@ -24,7 +24,7 @@ public class DepartmentUnitTests {
   public void setupCourseForTesting() {
     testCourse = new Course("Griffin Newbold", "417 IAB", "11:40-12:55", 250);
     Map<String, Course> courses = new HashMap<>();
-    courses.put("COMS4156", testCourse);
+    courses.put("4156", testCourse);
     testDepartment = new Department("CS", courses, "Prof. Gail Kaiser", 50);
   }
 
@@ -34,8 +34,8 @@ public class DepartmentUnitTests {
     assertEquals("Prof. Gail Kaiser", testDepartment.getDepartmentChair(),
         "Department chair should be 'Prof. Gail Kaiser'.");
     assertEquals(50, testDepartment.getNumberOfMajors(), "Number of majors should be 50.");
-    assertEquals(testCourse, testDepartment.getCourseSelection().get("COMS4156"),
-        "Course COMS4156 should be present.");
+    assertEquals(testCourse, testDepartment.getCourseSelection().get("4156"),
+        "Course 4156 should be present.");
   }
 
   @Test
@@ -78,7 +78,7 @@ public class DepartmentUnitTests {
 
   @Test
   public void toStringTest() {
-    String expectedResult = "CS COMS4156: \nInstructor: Griffin Newbold; Location: 417 IAB; Time:"
+    String expectedResult = "CS 4156: \nInstructor: Griffin Newbold; Location: 417 IAB; Time:"
         + " 11:40-12:55\n";
     assertEquals(expectedResult, testDepartment.toString());
   }
